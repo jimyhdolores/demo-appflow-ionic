@@ -25,14 +25,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      const updateUrl = 'https://geniusfitwatch.com/wp-content/uploads/my_app_update.xml';
-      this.appUpdate.checkAppUpdate(updateUrl).then(update => {
-        console.log(update.msg);
 
-      }).catch(error => {
-        console.log('error: ', error);
-
-      });
 
     });
   }
