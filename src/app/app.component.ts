@@ -25,9 +25,22 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.performAutomaticUpdate();
+      this.configureDeploy();
+      ///this.performAutomaticUpdate();
     });
   }
+  async configureDeploy() {
+    const config = {
+      appId: "ef436209",
+      channel: "Master",
+      maxVersions: 0,
+    };
+    let response = await this.deploy.configure(config);
+    console.log(response);
+
+    this.performAutomaticUpdate();
+  }
+
   async performAutomaticUpdate() {
     try {
       const currentVersion = await this.deploy.getCurrentVersion();
