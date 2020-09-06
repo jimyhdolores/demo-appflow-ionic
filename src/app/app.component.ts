@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AppUpdate } from '@ionic-native/app-update/ngx';
-
+import { Platform } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
+import { AppUpdate } from "@ionic-native/app-update/ngx";
+import { Deploy } from "cordova-plugin-ionic/dist/ngx";
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  selector: "app-root",
+  templateUrl: "app.component.html",
+  styleUrls: ["app.component.scss"],
 })
 export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private appUpdate: AppUpdate
+    private appUpdate: AppUpdate,
+    private deploy: Deploy
   ) {
     this.initializeApp();
   }
@@ -24,9 +25,25 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-
-
-
+      this.performAutomaticUpdate();
     });
+  }
+  async performAutomaticUpdate() {
+    try {
+      const currentVersion = await this.deploy.getCurrentVersion();
+      const resp = await this.deploy.sync(
+        { updateMethod: "auto" },
+        (percentDone) => {
+          console.log(`Update is ${percentDone}% done!`);
+        }
+      );
+      if (!currentVersion || currentVersion.versionId !== resp.versionId) {
+        // We found an update, and are in process of redirecting you since you put auto!
+      } else {
+        // No update available
+      }
+    } catch (err) {
+      // We encountered an error.
+    }
   }
 }
