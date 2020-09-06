@@ -49,20 +49,12 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "cordova-plugin-device": "^2.0.2",
-<<<<<<< HEAD
     "cordova-plugin-ionic": "^5.4.7",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^5.0.0",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.4",
-=======
-    "cordova-plugin-ionic-keyboard": "^2.2.0",
-    "cordova-plugin-ionic-webview": "^4.2.1",
-    "cordova-plugin-splashscreen": "^5.0.2",
-    "cordova-plugin-statusbar": "^2.4.2",
-    "cordova-plugin-whitelist": "^1.3.3",
->>>>>>> b389be3739b6e41871e89b64db2681baf93bbc5f
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
@@ -78,42 +70,19 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-<<<<<<< HEAD
       "cordova-plugin-ionic": {
         "APP_ID": "ef436209",
         "CHANNEL_NAME": "Master"
       },
-=======
-      "cordova-plugin-app-update": {},
->>>>>>> b389be3739b6e41871e89b64db2681baf93bbc5f
       "cordova-plugin-whitelist": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-<<<<<<< HEAD
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {}
-=======
-      "cordova-plugin-ionic-webview": {
-        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
-      },
-      "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-ionic": {
-        "APP_ID": "ef436209",
-        "CHANNEL_NAME": "Master",
-        "UPDATE_METHOD": "auto",
-        "MAX_STORE": "0",
-        "MIN_BACKGROUND_DURATION": "30",
-        "UPDATE_API": "https://api.ionicjs.com"
-      }
->>>>>>> b389be3739b6e41871e89b64db2681baf93bbc5f
     },
     "platforms": [
       "android"
     ]
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b389be3739b6e41871e89b64db2681baf93bbc5f
