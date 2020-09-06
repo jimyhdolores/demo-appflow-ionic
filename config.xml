@@ -4,11 +4,7 @@
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
-<<<<<<< HEAD
     <access origin="*" />
-=======
-    <access origin="*" subdomains="true" />
->>>>>>> b389be3739b6e41871e89b64db2681baf93bbc5f
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -102,7 +98,7 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <plugin name="cordova-plugin-ionic" spec="^5.0.6">
+    <plugin name="cordova-plugin-ionic" spec="^5.4.7">
         <variable name="APP_ID" value="ef436209" />
         <variable name="CHANNEL_NAME" value="Master" />
         <variable name="WARN_DEBUG" value="true" />
