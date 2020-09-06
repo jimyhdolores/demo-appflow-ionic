@@ -1,14 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouteReuseStrategy } from "@angular/router";
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
+import { SplashScreen } from "@ionic-native/splash-screen/ngx";
+import { StatusBar } from "@ionic-native/status-bar/ngx";
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { AppUpdate } from '@ionic-native/app-update/ngx';
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppUpdate } from "@ionic-native/app-update/ngx";
+import { Deploy } from "cordova-plugin-ionic/dist/ngx";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,8 +19,9 @@ import { AppUpdate } from '@ionic-native/app-update/ngx';
     StatusBar,
     SplashScreen,
     AppUpdate,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    Deploy,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
