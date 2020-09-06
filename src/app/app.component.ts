@@ -31,19 +31,24 @@ export class AppComponent {
   async performAutomaticUpdate() {
     try {
       const currentVersion = await this.deploy.getCurrentVersion();
+      console.log(currentVersion);
+
       const resp = await this.deploy.sync(
         { updateMethod: "auto" },
         (percentDone) => {
           console.log(`Update is ${percentDone}% done!`);
         }
       );
+      console.log("************************");
+      console.log(resp.versionId);
+
       if (!currentVersion || currentVersion.versionId !== resp.versionId) {
         // We found an update, and are in process of redirecting you since you put auto!
       } else {
         // No update available
       }
     } catch (err) {
-      // We encountered an error.
+      console.log(err);
     }
   }
 }
